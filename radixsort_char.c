@@ -7,7 +7,7 @@ void RadixSort(){
 	int order[26] = {0};
 	int n;
 
-    //length = 100
+    //string length = 100
     for(n = 99; n >= 0; n--){
 		int i;
 		for(i = 0; i < TEST_DATA_CNT; i++){
@@ -19,9 +19,8 @@ void RadixSort(){
 		for(i = 0; i < 26; i++){
 			if(order[i] != 0){
                 int j;
-				for(j = 0; j < order[i]; j++, k++){
+				for(j = 0; j < order[i]; j++, k++)
 					strcpy(unsorted[k], tmp[i][j]);
-				}
 			}
 			order[i] = 0;
 		}

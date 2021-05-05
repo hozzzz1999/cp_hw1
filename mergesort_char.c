@@ -17,7 +17,7 @@ void Merge(int front, int mid, int end){
 	i = 0;
 	j = 0;
 	k = front;
-	//while array A and B haven't finished scanning
+	//while array tmp_1 and tmp_2 haven't finished scanning
 	while(i < lenA && j < lenB){
 		if(strcmp(tmp_1[i], tmp_2[j]) < 0){
 			strcpy(unsorted[k], tmp_1[i]);
@@ -29,13 +29,13 @@ void Merge(int front, int mid, int end){
 		}
 		k++;
 	}
-	//Copy the remaing elements into arr[], if A[] haven't finished scanning
+	//Copy the remaining elements into unsorted[], if tmp_1 are any
 	while(i < lenA){
 		strcpy(unsorted[k], tmp_1[i]);
 		i++;
 		k++;
 	}
-	//Copy the remaing elements into arr[], if B[] haven't finished scanning
+	//Copy the remaining elements into unsorted[], if tmp_2 are any
 	while(j < lenB){
 		strcpy(unsorted[k], tmp_2[j]);
 		j++;
@@ -44,7 +44,7 @@ void Merge(int front, int mid, int end){
 }
 
 void MergeSort(int front, int end){
-	if(front < end){
+	if(front < end){					
 		int mid = (front + end) / 2;
 		MergeSort(front, mid);
 		MergeSort(mid + 1,end);
